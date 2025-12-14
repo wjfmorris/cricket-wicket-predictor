@@ -47,7 +47,4 @@ Inputs:
 Outputs:
 - ranked list of options by predicted wicket probability
 
----
-
-## Repository structure (suggested)
 
