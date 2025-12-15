@@ -1,0 +1,60 @@
+{
+  "feature_cols": [
+    "phase",
+    "tactical_style_4",
+    "bowler_bowling_type",
+    "bowler_arm",
+    "bowler_style_group",
+    "matchup_type",
+    "batter_hand",
+    "ball_num_in_innings",
+    "balls_remaining",
+    "wkts_in_hand_before",
+    "runs_innings_before_cap",
+    "curr_rr_cap",
+    "req_rr_cap",
+    "rr_pressure_cap"
+  ],
+  "cat_cols": [
+    "phase",
+    "tactical_style_4",
+    "bowler_bowling_type",
+    "bowler_arm",
+    "bowler_style_group",
+    "matchup_type",
+    "batter_hand"
+  ],
+  "num_cols": [
+    "ball_num_in_innings",
+    "balls_remaining",
+    "wkts_in_hand_before",
+    "runs_innings_before_cap",
+    "curr_rr_cap",
+    "req_rr_cap",
+    "rr_pressure_cap"
+  ],
+  "notes": {
+    "phase": "derived from over within innings: <=10 powerplay, <=40 middle, else death",
+    "curr_rr": "computed pre-ball using runs_innings_before / balls_faced_before_v2 * 6",
+    "req_rr": "2nd innings only, proxy target = 1st innings total + 1, computed if balls_remaining_v2>0",
+    "rr_pressure": "req_rr - curr_rr (2nd innings only)",
+    "capping": {
+      "curr_rr_cap": [
+        0,
+        15
+      ],
+      "req_rr_cap": [
+        0,
+        20
+      ],
+      "rr_pressure_cap": [
+        -15,
+        15
+      ],
+      "runs_innings_before_cap": [
+        0,
+        500
+      ]
+    }
+  }
+}
